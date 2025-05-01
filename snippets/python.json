@@ -1,0 +1,207 @@
+{
+  "Import module": {
+    "prefix": "py-im",
+    "body": "import ${1:module}",
+    "description": "Import a module"
+  },
+  "Import from module": {
+    "prefix": "py-ifm",
+    "body": "from ${1:module} import ${2:item}",
+    "description": "Import specific item from a module"
+  },
+  "Main check": {
+    "prefix": "py-main",
+    "body": "if __name__ == \"__main__\":\n    $0",
+    "description": "Python __main__ entrypoint"
+  },
+  "Function definition": {
+    "prefix": "py-def",
+    "body": "def ${1:func}(${2:args}):\n    $0",
+    "description": "Function definition"
+  },
+  "Class definition": {
+    "prefix": "py-class",
+    "body": "class ${1:ClassName}(${2:object}):\n    def __init__(self, ${3:args}):\n        $0",
+    "description": "Class definition"
+  },
+  "Property (getter)": {
+    "prefix": "py-prop",
+    "body": "@property\ndef ${1:attr}(self):\n    $0",
+    "description": "Property getter"
+  },
+  "Method definition": {
+    "prefix": "py-meth",
+    "body": "def ${1:method}(self, ${2:args}):\n    $0",
+    "description": "Method definition"
+  },
+  "For loop": {
+    "prefix": "py-for",
+    "body": "for ${1:item} in ${2:iterable}:\n    $0",
+    "description": "For loop"
+  },
+  "While loop": {
+    "prefix": "py-while",
+    "body": "while ${1:condition}:\n    $0",
+    "description": "While loop"
+  },
+  "If statement": {
+    "prefix": "py-if",
+    "body": "if ${1:condition}:\n    $0",
+    "description": "If statement"
+  },
+  "If else statement": {
+    "prefix": "py-ifelse",
+    "body": "if ${1:condition}:\n    ${2:pass}\nelse:\n    $0",
+    "description": "If-else statement"
+  },
+  "Elif / else": {
+    "prefix": "py-elif",
+    "body": "elif ${1:condition}:\n    $0",
+    "description": "Elif block"
+  },
+  "Try except": {
+    "prefix": "py-try",
+    "body": "try:\n    ${1:pass}\nexcept ${2:Exception} as ${3:e}:\n    $0",
+    "description": "Try/except block"
+  },
+  "Try except finally": {
+    "prefix": "py-tryf",
+    "body": "try:\n    ${1:pass}\nexcept ${2:Exception} as ${3:e}:\n    ${4:pass}\nfinally:\n    $0",
+    "description": "Try/except/finally block"
+  },
+  "With context manager": {
+    "prefix": "py-with",
+    "body": "with ${1:open('file')} as ${2:f}:\n    $0",
+    "description": "With context manager"
+  },
+  "Context manager class": {
+    "prefix": "py-ctx",
+    "body": "class ${1:ContextManager}:\n    def __enter__(self):\n        $2\n        return self\n    def __exit__(self, exc_type, exc_value, traceback):\n        $0",
+    "description": "Context manager class (with __enter__/__exit__)"
+  },
+  "Decorator": {
+    "prefix": "py-deco",
+    "body": "def ${1:decorator}(func):\n    def wrapper(*args, **kwargs):\n        $0\n        return func(*args, **kwargs)\n    return wrapper",
+    "description": "Decorator function"
+  },
+  "Lambda/function expression": {
+    "prefix": "py-lambda",
+    "body": "lambda ${1:x}: ${2:x + 1}",
+    "description": "Lambda expression"
+  },
+  "List comprehension": {
+    "prefix": "py-lc",
+    "body": "[${1:x} for ${2:x} in ${3:xs}]",
+    "description": "List comprehension"
+  },
+  "Print statement": {
+    "prefix": "py-print",
+    "body": "print(${1:\"msg\"})",
+    "description": "Print statement"
+  },
+  "F-string": {
+    "prefix": "py-fs",
+    "body": "f\"${1:text} = {${2:var}}\"",
+    "description": "F-string"
+  },
+  "Logging info": {
+    "prefix": "py-logi",
+    "body": "import logging\nlogging.info(f\"${1:msg}\")",
+    "description": "Logging info message"
+  },
+  "Logging debug": {
+    "prefix": "py-logd",
+    "body": "import logging\nlogging.debug(f\"${1:msg}\")",
+    "description": "Logging debug message"
+  },
+  "FastAPI app": {
+    "prefix": "py-fastapi-app",
+    "body": "from fastapi import FastAPI\n\napp = FastAPI()\n\n@app.get(\"/\")\ndef read_root():\n    return {\"Hello\": \"World\"}",
+    "description": "FastAPI minimal application"
+  },
+  "FastAPI path operation": {
+    "prefix": "py-fastapi-route",
+    "body": "@app.${1:get}(\"/${2:path}\")\ndef ${3:handler}(${4}):\n    $0",
+    "description": "FastAPI route handler"
+  },
+  "FastAPI dependency": {
+    "prefix": "py-fastapi-dep",
+    "body": "from fastapi import Depends\n\ndef ${1:get_dependency}():\n    $2\n    return $3",
+    "description": "FastAPI dependency function"
+  },
+  "Pydantic BaseModel": {
+    "prefix": "py-pydbase",
+    "body": "from pydantic import BaseModel\n\nclass ${1:Model}(BaseModel):\n    ${2:field}: ${3:type}\n    ",
+    "description": "Pydantic BaseModel class"
+  },
+  "Pydantic validator": {
+    "prefix": "py-pydval",
+    "body": "from pydantic import validator\n\n@validator(\"${1:field}\")\ndef ${2:validate_field}(cls, v):\n    $0\n    return v",
+    "description": "Pydantic validator"
+  },
+  "Typer CLI app": {
+    "prefix": "py-typer-app",
+    "body": "import typer\n\napp = typer.Typer()\n\n@app.command()\ndef ${1:hello}(${2:name}: str):\n    print(f\"Hello {name}\")\n\nif __name__ == \"__main__\":\n    app()",
+    "description": "Typer CLI app setup"
+  },
+  "SQLAlchemy Base": {
+    "prefix": "py-sa-base",
+    "body": "from sqlalchemy.ext.declarative import declarative_base\nBase = declarative_base()",
+    "description": "SQLAlchemy Base import"
+  },
+  "SQLAlchemy Model": {
+    "prefix": "py-sa-model",
+    "body": "class ${1:Model}(Base):\n    __tablename__ = \"${2:tablename}\"\n    id = Column(Integer, primary_key=True)\n    ${3:field} = Column(${4:Type})",
+    "description": "SQLAlchemy ORM model"
+  },
+  "SQLAlchemy session": {
+    "prefix": "py-sa-session",
+    "body": "from sqlalchemy.orm import sessionmaker\nSessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=${1:engine})\nsession = SessionLocal()",
+    "description": "SQLAlchemy session setup"
+  },
+  "Unittest testcase": {
+    "prefix": "py-ut",
+    "body": "import unittest\n\nclass ${1:TestCase}(unittest.TestCase):\n    def setUp(self):\n        $2\n    def test_${3:testname}(self):\n        $0",
+    "description": "Unittest TestCase"
+  },
+  "Unittest main": {
+    "prefix": "py-utmain",
+    "body": "if __name__ == \"__main__\":\n    unittest.main()",
+    "description": "Unittest main entrypoint"
+  },
+  "Pytest function": {
+    "prefix": "py-pt",
+    "body": "def test_${1:func}():\n    $0",
+    "description": "Pytest function"
+  },
+  "Pytest parametrize": {
+    "prefix": "py-ptp",
+    "body": "@pytest.mark.parametrize(\"${1:param}\", [${2:values}])\ndef test_${3:func}(${1:param}):\n    $0",
+    "description": "Pytest parametrize"
+  },
+  "Pytest fixture": {
+    "prefix": "py-ptfix",
+    "body": "@pytest.fixture\ndef ${1:my_fixture}():\n    $0",
+    "description": "Pytest fixture"
+  },
+  "Pytest table driven": {
+    "prefix": "py-pttable",
+    "body": "@pytest.mark.parametrize(\"${1:param}\", [\n    ${2:value1},\n    ${3:value2}\n])\ndef test_${4:func}(${1:param}):\n    $0",
+    "description": "Pytest table-driven parametrize"
+  },
+  "Dataclass": {
+    "prefix": "py-dc",
+    "body": "from dataclasses import dataclass\n\n@dataclass\nclass ${1:Name}:\n    ${2:field}: ${3:type}",
+    "description": "Python dataclass"
+  },
+  "Type hint function": {
+    "prefix": "py-hintf",
+    "body": "def ${1:func}(${2:arg}: ${3:type}) -> ${4:rtype}:\n    $0",
+    "description": "Function with type hints"
+  },
+  "Docstring": {
+    "prefix": "py-doc",
+    "body": "\"\"\"\n${1:Summary}\n\nArgs:\n    $2\nReturns:\n    $3\n\"\"\"",
+    "description": "Function docstring template"
+  }
+}
