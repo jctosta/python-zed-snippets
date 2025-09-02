@@ -34,7 +34,15 @@ git clone https://github.com/jctosta/python-zed-snippets.git
 
 ## Usage
 
-Start typing the snippet prefix (e.g., `go-func`) in a Go file and press `Tab` to expand the snippet.
+To make snippets appear at the top of the completion list in Zed, add this setting to your Zed settings file:
+
+```json
+{
+    "snippet_sort_order": "top"
+}
+```
+
+Start typing the snippet prefix (e.g., `py-def`) in a Python file and press `Tab` to expand the snippet.
 
 ## Available Snippets
 
