@@ -1,6 +1,6 @@
 id = "python-snippets"
 name = "Python Snippets"
-version = "0.1.1"
+version = "0.1.2"
 schema_version = 1
 authors = ["Carlos Tosta <jctosta86@gmail.com>"]
 description = "Python snippets for Zed IDE. A collection of python snippets to improve your development speed."
