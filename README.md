@@ -92,6 +92,10 @@ Start typing the snippet prefix (e.g., `py-def`) in a Python file and press `Tab
 | `py-ptp`                | Pytest parametrize test                          |
 | `py-ptfix`              | Pytest fixture                                   |
 | `py-pttable`            | Pytest table-driven test (parametrize)           |
+| **Asyncio**             |                                                  |
+| `py-adef`               | Async coroutine definition                       |
+| `py-atg`                | Async TaskGroup context manager definition       |
+| `py-amain`              | Main entrypoint with asyncio.run function        |
 | **Misc**                |                                                  |
 | `py-dc`                 | Python dataclass                                 |
 | `py-hintf`              | Function with type hints                         |
