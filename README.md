@@ -7,11 +7,12 @@ A collection of Python snippets for the [Zed IDE](https://zed.dev) to improve yo
 This extension provides a comprehensive set of snippets for Python development, including:
 
 - Package and import declarations
-- Control structures (if, for, switch)
+- Control structures (if, for, while, try/except)
 - Function and method declarations
-- Common Go patterns
-- HTTP server code
-- Testing helpers
+- Modern Python features (f-strings, type hints, dataclasses)
+- Framework-specific snippets (FastAPI, Pydantic, Typer)
+- Database ORM snippets (SQLAlchemy)
+- Testing helpers (unittest, pytest)
 - And much more!
 
 ## Installation
@@ -42,70 +43,70 @@ To make snippets appear at the top of the completion list in Zed, add this setti
 }
 ```
 
-Start typing the snippet prefix (e.g., `py-def`) in a Python file and press `Tab` to expand the snippet.
+Start typing the snippet prefix (e.g., `def`) in a Python file and press `Tab` to expand the snippet.
 
 ## Available Snippets
 
 | Prefix                  | Description                                      |
 |-------------------------|--------------------------------------------------|
-| `py-im`                 | Import module                                    |
-| `py-ifm`                | Import from module                               |
-| `py-main`               | `if __name__ == "__main__"` entrypoint           |
-| `py-def`                | Function definition                              |
-| `py-class`              | Class definition                                 |
-| `py-prop`               | Property (getter)                                |
-| `py-meth`               | Method definition                                |
-| `py-for`                | For loop                                         |
-| `py-while`              | While loop                                       |
-| `py-if`                 | If statement                                     |
-| `py-ifelse`             | If-else statement                                |
-| `py-elif`               | Elif block                                       |
-| `py-try`                | Try-except block                                 |
-| `py-tryf`               | Try-except-finally block                         |
-| `py-with`               | With context manager                             |
-| `py-ctx`                | Context manager class                            |
-| `py-deco`               | Decorator function                               |
-| `py-lambda`             | Lambda expression                                |
-| `py-lc`                 | List comprehension                               |
-| `py-print`              | Print statement                                  |
-| `py-fs`                 | F-string                                         |
-| `py-logi`               | Logging info message                             |
-| `py-logd`               | Logging debug message                            |
+| `im`                    | Import module                                    |
+| `ifm`                   | Import from module                               |
+| `main`                  | `if __name__ == "__main__"` entrypoint           |
+| `def`                   | Function definition                              |
+| `class`                 | Class definition                                 |
+| `prop`                  | Property (getter)                                |
+| `meth`                  | Method definition                                |
+| `for`                   | For loop                                         |
+| `while`                 | While loop                                       |
+| `if`                    | If statement                                     |
+| `ifelse`                | If-else statement                                |
+| `elif`                  | Elif block                                       |
+| `try`                   | Try-except block                                 |
+| `tryf`                  | Try-except-finally block                         |
+| `with`                  | With context manager                             |
+| `ctx`                   | Context manager class                            |
+| `deco`                  | Decorator function                               |
+| `lambda`                | Lambda expression                                |
+| `lc`                    | List comprehension                               |
+| `print`                 | Print statement                                  |
+| `fs`                    | F-string                                         |
+| `logi`                  | Logging info message                             |
+| `logd`                  | Logging debug message                            |
 | **FastAPI**             |                                                  |
-| `py-fastapi-app`        | FastAPI minimal app                              |
-| `py-fastapi-route`      | FastAPI route handler                            |
-| `py-fastapi-dep`        | FastAPI dependency function                      |
+| `fastapi-app`           | FastAPI minimal app                              |
+| `fastapi-route`         | FastAPI route handler                            |
+| `fastapi-dep`           | FastAPI dependency function                      |
 | **Pydantic**            |                                                  |
-| `py-pydbase`            | Pydantic BaseModel class                         |
-| `py-pydval`             | Pydantic validator                               |
+| `pydbase`               | Pydantic BaseModel class                         |
+| `pydval`                | Pydantic validator                               |
 | **Typer**               |                                                  |
-| `py-typer-app`          | Typer CLI application setup                      |
+| `typer-app`             | Typer CLI application setup                      |
 | **SQLAlchemy**          |                                                  |
-| `py-sa-base`            | SQLAlchemy Base import                           |
-| `py-sa-model`           | SQLAlchemy Model                                 |
-| `py-sa-session`         | SQLAlchemy session setup                         |
+| `sa-base`               | SQLAlchemy Base import                           |
+| `sa-model`              | SQLAlchemy Model                                 |
+| `sa-session`            | SQLAlchemy session setup                         |
 | **unittest**            |                                                  |
-| `py-ut`                 | Unittest TestCase                                |
-| `py-utmain`             | Unittest main entrypoint                         |
+| `ut`                    | Unittest TestCase                                |
+| `utmain`                | Unittest main entrypoint                         |
 | **pytest**              |                                                  |
-| `py-pt`                 | Pytest test function                             |
-| `py-ptp`                | Pytest parametrize test                          |
-| `py-ptfix`              | Pytest fixture                                   |
-| `py-pttable`            | Pytest table-driven test (parametrize)           |
+| `pt`                    | Pytest test function                             |
+| `ptp`                   | Pytest parametrize test                          |
+| `ptfix`                 | Pytest fixture                                   |
+| `pttable`               | Pytest table-driven test (parametrize)           |
 | **Asyncio**             |                                                  |
-| `py-adef`               | Async coroutine definition                       |
-| `py-atg`                | Async TaskGroup context manager definition       |
-| `py-amain`              | Main entrypoint with asyncio.run function        |
+| `adef`                  | Async coroutine definition                       |
+| `atg`                   | Async TaskGroup context manager definition       |
+| `amain`                 | Main entrypoint with asyncio.run function        |
 | **Misc**                |                                                  |
-| `py-dc`                 | Python dataclass                                 |
-| `py-hintf`              | Function with type hints                         |
-| `py-doc`                | Function docstring template                      |
+| `dc`                    | Python dataclass                                 |
+| `hintf`                 | Function with type hints                         |
+| `doc`                   | Function docstring template                      |
 
 ## Examples
 
 ### Function definition
 
-Type `py-def` and press Tab:
+Type `def` and press Tab:
 
 ```python
 def func(args):
@@ -116,7 +117,7 @@ def func(args):
 
 ### If statement
 
-Type `py-if` and press Tab:
+Type `if` and press Tab:
 
 ```python
 if condition:
@@ -127,7 +128,7 @@ if condition:
 
 ### Class with property and method
 
-Type `py-class`, then `py-prop`, and `py-meth` inside the class, and press Tab each time:
+Type `class`, then `prop`, and `meth` inside the class, and press Tab each time:
 
 ```python
 class MyClass(object):
@@ -146,7 +147,7 @@ class MyClass(object):
 
 ### FastAPI minimal app
 
-Type `py-fastapi-app` and press Tab:
+Type `fastapi-app` and press Tab:
 
 ```python
 from fastapi import FastAPI
@@ -162,7 +163,7 @@ def read_root():
 
 ### Pytest test function
 
-Type `py-pt` and press Tab:
+Type `pt` and press Tab:
 
 ```python
 def test_func():
@@ -173,7 +174,7 @@ def test_func():
 
 ### Dataclass
 
-Type `py-dc` and press Tab:
+Type `dc` and press Tab:
 
 ```python
 from dataclasses import dataclass
